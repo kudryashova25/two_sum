@@ -1,13 +1,5 @@
 import unittest
-from typing import Optional, Tuple, List
-
-def two_sum(nums: List[int], target: int) -> Optional[Tuple[int, int]]:
-    n = len(nums)
-    for i in range(n):
-        for j in range(i + 1, n):
-            if nums[i] + nums[j] == target:
-                return (i, j)
-    return None
+from two_sum import two_sum
 
 
 class TestTwoSum(unittest.TestCase):
@@ -46,7 +38,7 @@ class TestTwoSum(unittest.TestCase):
     
     def test_multiple_pairs_first_returned(self):
         result = two_sum([1, 5, 8, 5], 10)
-        self.assertEqual(result, (1, 2))
+        self.assertEqual(result, (1, 3))  # исправлено: (1, 3) вместо (1, 2)
     
     def test_duplicate_values_different_positions(self):
         result = two_sum([3, 2, 3], 6)
